@@ -10,12 +10,12 @@ terraform {
 }
 
 resource "aws_key_pair" "terraform_pub_key" {
-  public_key = file("~/.ssh/surfkeywin.pub")
+  public_key = file("~/.ssh/<keypairname>.pub")
 }
 
 variable "private_key_path" {
   description = "Path to the private SSH key, used to access the instance."
-  default     = "~/.ssh/surfkeywin.pem"
+  default     = "~/.ssh/<keypairname>.pem"
 }
 
 variable "instance_name" {
